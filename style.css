@@ -6,28 +6,28 @@
   --bg-card: rgba(17, 24, 39, 0.7);
   --bg-card-hover: rgba(23, 33, 53, 0.85);
   --border-color: rgba(255, 255, 255, 0.08);
-  --border-color-active: rgba(253, 164, 175, 0.4);
+  --border-color-active: rgba(96, 165, 250, 0.4);
   
   --text-main: #f3f4f6;
   --text-muted: #9ca3af;
   --text-dim: #6b7280;
   
-  /* Neon pastel textile theme */
-  --color-rose: #fda4af;     /* Thread rose */
-  --color-peach: #fdbb2d;    /* Soft warm peach */
-  --color-lavender: #c084fc; /* Lavender knit */
-  --color-blue: #60a5fa;     /* Tech blue */
+  /* Neon pastel tech-craft theme */
+  --color-blue: #60a5fa;      /* Tech blue */
+  --color-turquoise: #2dd4bf; /* Neon turquoise */
+  --color-green: #4ade80;     /* Pastel green */
+  --accent-rose: var(--color-turquoise); /* Turquoise heart indicator */
   
   /* Gradients */
-  --gradient-main: linear-gradient(135deg, #fda4af 0%, #c084fc 50%, #60a5fa 100%);
-  --gradient-card: linear-gradient(135deg, rgba(253, 164, 175, 0.03) 0%, rgba(192, 132, 252, 0.03) 100%);
-  --gradient-text: linear-gradient(135deg, #fda4af 10%, #c084fc 60%, #60a5fa 100%);
+  --gradient-main: linear-gradient(135deg, #60a5fa 0%, #2dd4bf 50%, #4ade80 100%);
+  --gradient-card: linear-gradient(135deg, rgba(96, 165, 250, 0.03) 0%, rgba(45, 212, 191, 0.03) 100%);
+  --gradient-text: linear-gradient(135deg, #60a5fa 10%, #2dd4bf 60%, #4ade80 100%);
   
   /* Shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.4);
-  --shadow-glow: 0 0 30px rgba(253, 164, 175, 0.15);
-  --shadow-glow-hover: 0 0 40px rgba(192, 132, 252, 0.25);
+  --shadow-glow: 0 0 30px rgba(45, 212, 191, 0.15);
+  --shadow-glow-hover: 0 0 40px rgba(96, 165, 250, 0.25);
   
   /* Typography */
   --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -70,7 +70,7 @@ body {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-rose);
+  background: var(--color-blue);
 }
 
 /* Background Blobs */
@@ -87,7 +87,7 @@ body {
 .blob-1 {
   width: 400px;
   height: 400px;
-  background: rgba(253, 164, 175, 0.25);
+  background: rgba(45, 212, 191, 0.22);
   top: -100px;
   right: -100px;
   animation-duration: 25s;
@@ -96,7 +96,7 @@ body {
 .blob-2 {
   width: 500px;
   height: 500px;
-  background: rgba(192, 132, 252, 0.18);
+  background: rgba(74, 222, 128, 0.16);
   bottom: -150px;
   left: -100px;
   animation-duration: 30s;
@@ -149,7 +149,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 2rem;
+  padding: 1.25rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
@@ -190,6 +190,8 @@ body {
   transition: var(--transition-fast);
   position: relative;
   padding: 0.25rem 0;
+  display: inline-flex;
+  align-items: center;
 }
 
 .nav-link::after {
@@ -217,10 +219,13 @@ body {
   font-size: 1.25rem;
   text-decoration: none;
   transition: var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-link-icon:hover {
-  color: var(--color-rose);
+  color: var(--color-blue);
   transform: translateY(-2px);
 }
 
@@ -228,9 +233,9 @@ body {
 .badge {
   display: inline-block;
   padding: 0.4rem 1rem;
-  background: rgba(253, 164, 175, 0.08);
-  border: 1px solid rgba(253, 164, 175, 0.2);
-  color: var(--color-rose);
+  background: rgba(74, 222, 128, 0.08);
+  border: 1px solid rgba(74, 222, 128, 0.2);
+  color: var(--color-green);
   border-radius: 50px;
   font-size: 0.85rem;
   font-weight: 600;
@@ -262,7 +267,7 @@ body {
 .btn-primary:hover {
   opacity: 0.95;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(253, 164, 175, 0.35);
+  box-shadow: 0 8px 25px rgba(96, 165, 250, 0.35);
 }
 
 .btn-secondary {
@@ -280,6 +285,16 @@ body {
 .btn-sm {
   padding: 0.5rem 1.25rem;
   font-size: 0.85rem;
+}
+
+section {
+  scroll-margin-top: 5.5rem;
+}
+
+@media (max-width: 768px) {
+  section {
+    scroll-margin-top: 4.5rem;
+  }
 }
 
 /* Hero Section */
@@ -378,8 +393,8 @@ body {
   height: 44px;
   border-radius: 50%;
   background: rgba(17, 24, 39, 0.9);
-  border: 1px solid var(--border-color-active);
-  color: var(--color-rose);
+  border: 1px solid rgba(74, 222, 128, 0.4);
+  color: var(--color-green);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -398,8 +413,8 @@ body {
   bottom: 15px;
   right: 0;
   animation-delay: -2s;
-  color: var(--color-lavender);
-  border-color: rgba(192, 132, 252, 0.4);
+  color: var(--color-turquoise);
+  border-color: rgba(45, 212, 191, 0.4);
 }
 
 @keyframes bounceTag {
@@ -460,7 +475,7 @@ body {
 }
 
 .tool-card:hover {
-  border-color: rgba(192, 132, 252, 0.25);
+  border-color: rgba(96, 165, 250, 0.25);
   box-shadow: var(--shadow-glow-hover);
 }
 
@@ -480,9 +495,9 @@ body {
   width: 56px;
   height: 56px;
   border-radius: 12px;
-  background: rgba(253, 164, 175, 0.1);
-  border: 1px solid rgba(253, 164, 175, 0.2);
-  color: var(--color-rose);
+  background: rgba(74, 222, 128, 0.1);
+  border: 1px solid rgba(74, 222, 128, 0.2);
+  color: var(--color-green);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -490,9 +505,9 @@ body {
 }
 
 #card-punchcard .tool-icon-wrapper {
-  background: rgba(192, 132, 252, 0.1);
-  border-color: rgba(192, 132, 252, 0.2);
-  color: var(--color-lavender);
+  background: rgba(45, 212, 191, 0.1);
+  border-color: rgba(45, 212, 191, 0.2);
+  color: var(--color-turquoise);
 }
 
 .tool-name {
@@ -535,37 +550,37 @@ body {
 }
 
 .btn-embed {
-  background: rgba(253, 164, 175, 0.1);
-  color: var(--color-rose);
-  border: 1px solid rgba(253, 164, 175, 0.25);
+  background: rgba(74, 222, 128, 0.1);
+  color: var(--color-green);
+  border: 1px solid rgba(74, 222, 128, 0.25);
 }
 
 .btn-embed:hover {
-  background: rgba(253, 164, 175, 0.2);
-  border-color: var(--color-rose);
+  background: rgba(74, 222, 128, 0.2);
+  border-color: var(--color-green);
 }
 
 .btn-embed.active {
-  background: var(--color-rose);
+  background: var(--color-green);
   color: #0b0f19;
-  border-color: var(--color-rose);
+  border-color: var(--color-green);
 }
 
 #card-punchcard .btn-embed {
-  background: rgba(192, 132, 252, 0.1);
-  color: var(--color-lavender);
-  border-color: rgba(192, 132, 252, 0.25);
+  background: rgba(45, 212, 191, 0.1);
+  color: var(--color-turquoise);
+  border-color: rgba(45, 212, 191, 0.25);
 }
 
 #card-punchcard .btn-embed:hover {
-  background: rgba(192, 132, 252, 0.2);
-  border-color: var(--color-lavender);
+  background: rgba(45, 212, 191, 0.2);
+  border-color: var(--color-turquoise);
 }
 
 #card-punchcard .btn-embed.active {
-  background: var(--color-lavender);
+  background: var(--color-turquoise);
   color: #0b0f19;
-  border-color: var(--color-lavender);
+  border-color: var(--color-turquoise);
 }
 
 .btn-link {
@@ -800,8 +815,12 @@ body {
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
   .header-container {
-    padding: 1.5rem 2rem;
+    padding: 1rem 1.5rem;
   }
   
   .nav {
