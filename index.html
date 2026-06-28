@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Softwear Lab | Craft & Code</title>
+  <meta name="description" content="Personal portfolio and interactive tools by Anna (Softwear Lab). Bridging the gap between textile crafts and software engineering.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Background Decorative Orbs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <div class="container">
+    <!-- Header / Navigation -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-text">softwear<span>.lab</span></span>
+      </div>
+      <nav class="nav">
+        <a href="#about" class="nav-link active">About</a>
+        <a href="#tools" class="nav-link">Tools</a>
+        <a href="https://github.com/softwear-lab" target="_blank" rel="noopener noreferrer" class="nav-link-icon" title="GitHub Profile">
+          <i class="fab fa-github"></i>
+        </a>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="about" class="hero-section">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="badge">Craft meets Computation</div>
+          <h1 class="hero-title">Connecting the worlds of <span class="gradient-text">textiles</span> and <span class="gradient-text">code</span>.</h1>
+          <p class="hero-description">
+            Hi, I'm Anna. I design and build open-source utilities at the intersection of knitting, craft, and digital fabrication. By turning logic into stitches and hardware scans into design data, I create tools to help makers bridge the tactile and the technical.
+          </p>
+          <div class="hero-actions">
+            <a href="#tools" class="btn btn-primary">Explore Tools <i class="fas fa-arrow-down"></i></a>
+            <a href="https://github.com/softwear-lab" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <i class="fab fa-github"></i> View GitHub
+            </a>
+          </div>
+        </div>
+        
+        <div class="hero-visual">
+          <div class="profile-frame">
+            <div class="profile-glow"></div>
+            <img src="https://avatars.githubusercontent.com/u/5852683?v=4" alt="Anna - Softwear Lab avatar" class="profile-img">
+            <div class="tech-tag tag-top-left"><i class="fas fa-code"></i></div>
+            <div class="tech-tag tag-bottom-right"><i class="fas fa-bezier-curve"></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools/Projects Section -->
+    <section id="tools" class="tools-section">
+      <div class="section-header">
+        <h2 class="section-title">Interactive Tools</h2>
+        <p class="section-subtitle">Experiment with open-source utilities directly from this page, or open them in full window.</p>
+      </div>
+
+      <div class="tools-grid">
+        <!-- Tool 1: Knitting Chart Generator -->
+        <div class="tool-card" id="card-knitting">
+          <div class="tool-info">
+            <div class="tool-header">
+              <span class="tool-icon-wrapper"><i class="fas fa-table"></i></span>
+              <div>
+                <h3 class="tool-name">Knitting Chart Generator</h3>
+                <span class="tool-tag">Design Tool</span>
+              </div>
+            </div>
+            <p class="tool-desc">
+              Create, customize, and download grid-based patterns for knitting. Design complex colorwork or stitch charts with visual grids, custom color palettes, and print-ready outputs.
+            </p>
+            <div class="tool-buttons">
+              <button class="btn-tool btn-embed" onclick="toggleIframe('knitting', 'https://softwear-lab.github.io/knitting-chart-generator/')">
+                <span class="embed-text">Run Inline</span> <i class="fas fa-play"></i>
+              </button>
+              <a href="https://softwear-lab.github.io/knitting-chart-generator/" target="_blank" rel="noopener noreferrer" class="btn-tool btn-link" title="Open in new tab">
+                Open App <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Browser Frame for Embedding -->
+          <div class="browser-wrapper" id="wrapper-knitting">
+            <div class="browser-bar">
+              <div class="browser-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="browser-address">
+                <i class="fas fa-lock"></i>
+                <span>softwear-lab.github.io/knitting-chart-generator/</span>
+              </div>
+              <div class="browser-actions">
+                <button class="browser-btn" onclick="refreshIframe('iframe-knitting')" title="Reload"><i class="fas fa-redo"></i></button>
+                <button class="browser-btn" onclick="toggleFullscreen('wrapper-knitting')" title="Maximize"><i class="fas fa-expand"></i></button>
+              </div>
+            </div>
+            <div class="browser-viewport">
+              <div class="placeholder-overlay" id="placeholder-knitting">
+                <div class="placeholder-content">
+                  <i class="fas fa-laptop-code placeholder-icon"></i>
+                  <h4>Knitting Chart Generator</h4>
+                  <p>Click "Run Inline" to load the application inside this page.</p>
+                  <button class="btn btn-primary btn-sm" onclick="toggleIframe('knitting', 'https://softwear-lab.github.io/knitting-chart-generator/')">Load Application</button>
+                </div>
+              </div>
+              <iframe id="iframe-knitting" data-src="https://softwear-lab.github.io/knitting-chart-generator/" src="about:blank" title="Knitting Chart Generator"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tool 2: Punchcard Scanner -->
+        <div class="tool-card" id="card-punchcard">
+          <div class="tool-info">
+            <div class="tool-header">
+              <span class="tool-icon-wrapper"><i class="fas fa-qrcode"></i></span>
+              <div>
+                <h3 class="tool-name">Punchcard Scanner</h3>
+                <span class="tool-tag">Computer Vision</span>
+              </div>
+            </div>
+            <p class="tool-desc">
+              Scan and digitize physical knitting machine punchcards using your camera or an image file. Automatically detects grid patterns, processes punchcard holes, and exports digital formats.
+            </p>
+            <div class="tool-buttons">
+              <button class="btn-tool btn-embed" onclick="toggleIframe('punchcard', 'https://softwear-lab.github.io/punchcard-scanner/')">
+                <span class="embed-text">Run Inline</span> <i class="fas fa-play"></i>
+              </button>
+              <a href="https://softwear-lab.github.io/punchcard-scanner/" target="_blank" rel="noopener noreferrer" class="btn-tool btn-link" title="Open in new tab">
+                Open App <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Browser Frame for Embedding -->
+          <div class="browser-wrapper" id="wrapper-punchcard">
+            <div class="browser-bar">
+              <div class="browser-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="browser-address">
+                <i class="fas fa-lock"></i>
+                <span>softwear-lab.github.io/punchcard-scanner/</span>
+              </div>
+              <div class="browser-actions">
+                <button class="browser-btn" onclick="refreshIframe('iframe-punchcard')" title="Reload"><i class="fas fa-redo"></i></button>
+                <button class="browser-btn" onclick="toggleFullscreen('wrapper-punchcard')" title="Maximize"><i class="fas fa-expand"></i></button>
+              </div>
+            </div>
+            <div class="browser-viewport">
+              <div class="placeholder-overlay" id="placeholder-punchcard">
+                <div class="placeholder-content">
+                  <i class="fas fa-camera placeholder-icon"></i>
+                  <h4>Punchcard Scanner</h4>
+                  <p>Click "Run Inline" to load the application inside this page.</p>
+                  <button class="btn btn-primary btn-sm" onclick="toggleIframe('punchcard', 'https://softwear-lab.github.io/punchcard-scanner/')">Load Application</button>
+                </div>
+              </div>
+              <iframe id="iframe-punchcard" data-src="https://softwear-lab.github.io/punchcard-scanner/" src="about:blank" title="Punchcard Scanner" allow="camera"></iframe>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2026 Softwear Lab. All rights reserved. Created with <i class="fas fa-heart" style="color: var(--accent-rose);"></i> for craft and code.</p>
+      <div class="footer-links">
+        <a href="https://github.com/softwear-lab" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
